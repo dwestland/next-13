@@ -45,12 +45,14 @@ export const authOptions: NextAuthOptions = {
         return {
           id: user.id + '',
           email: user.email,
+          // Add additional keys to session
           name: user.name,
           randomKey: 'Hey cool'
         }
       }
     })
   ],
+  // Use callbacks to add additional keys to the token and session
   callbacks: {
     session: ({ session, token }) => {
       console.log('Session Callback', { session, token })
